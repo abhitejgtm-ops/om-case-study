@@ -1,0 +1,32 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: custom-action-test
+  title: Custom Action Test
+  description: Test template for my:custom:action
+spec:
+  owner: user:guest
+  type: service
+
+  parameters:
+    - title: File Details
+      required:
+        - filename
+        - contents
+      properties:
+        filename:
+          title: Filename
+          type: string
+          default: output.txt
+        contents:
+          title: File Contents
+          type: string
+          default: Hello from my custom action!
+
+  steps:
+    - id: create-file
+      name: Create File
+      action: my:custom:action
+      input:
+        filename: ${{ parameters.filename }}
+        contents: ${{ parameters.contents }}
