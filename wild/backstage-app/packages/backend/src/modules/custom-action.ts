@@ -1,5 +1,6 @@
 import { resolveSafeChildPath } from '@backstage/backend-plugin-api';
 import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
+import { z } from 'zod';
 import { mkdir, writeFile } from 'node:fs/promises';
 
 export const createCustomAction = () => {
