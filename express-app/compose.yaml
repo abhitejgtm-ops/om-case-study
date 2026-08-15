@@ -1,1 +1,5 @@
-# Add code here
+# Add code hereservices:
+  app:
+    build: .
+    ports:
+      - "4567:4567"
